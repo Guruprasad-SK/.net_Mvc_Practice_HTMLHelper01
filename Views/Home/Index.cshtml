@@ -1,0 +1,52 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        @helper MyListView(string[] str) 
+        { 
+    if (str.Length == 0)
+    {
+        <label>No data Exist</label>
+    }
+    else
+    {
+    <ul>
+        @foreach (var item in str)
+        {
+        <li>
+            @item
+        </li>
+        }
+
+    </ul>
+    }
+}
+
+    </div>
+    <div>
+        <label>Example-1 Names</label>
+        <div>
+            @MyListView(new string[] { "Tom", "Viany", "Abhijith", "Pranavi", "Vishal" })
+        </div>
+        <div>
+            <labl>Example-2 Roles</labl>
+            <div>
+                @MyListView(new string[] { "C#", "DataEngineer", ".NET", "Java", "SQL" })
+            </div>
+        </div>
+        <div>
+            <labl>Example-3 Empty String</labl>
+            <div>
+                @MyListView(new string[] { })
+            </div>
+        </div>
+    </div>
+</body>
+</html>
